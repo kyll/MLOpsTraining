@@ -1,0 +1,8 @@
+name: MLOpsTraining
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python
+  - pandas
+  - jupyterlab
