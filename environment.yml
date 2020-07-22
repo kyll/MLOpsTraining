@@ -6,3 +6,8 @@ dependencies:
   - python
   - pandas
   - jupyterlab
+  - pytest
+  - scikit-learn
+  - pytest-cov
+prefix: /Users/bramvanmeurs/miniconda3/envs/MLOpsTraining
+
