@@ -1,12 +1,12 @@
 ---
 page_type: sample
 languages:
-- python
+  - python
 products:
-- azure
-- azure-machine-learning-service
-- azure-devops
-description: "Code which demonstrates how to set up and operationalize an MLOps flow leveraging Azure Machine Learning and Azure DevOps."
+  - azure
+  - azure-machine-learning-service
+  - azure-devops
+description: 'Code which demonstrates how to set up and operationalize an MLOps flow leveraging Azure Machine Learning and Azure DevOps.'
 ---
 
 # MLOps with Azure ML
@@ -17,7 +17,7 @@ CD: [![Build Status](https://aidemos.visualstudio.com/MLOps/_apis/build/status/m
 
 MLOps will help you to understand how to build a Continuous Integration and Continuous Delivery pipeline for an ML/AI project. We will be using the Azure DevOps Project for build and release/deployment pipelines along with Azure ML services for model retraining pipeline, model management and operationalization.
 
-![ML lifecycle](/docs/images/ml-lifecycle.png)
+![ML lifecycle](images/ml-lifecycle.png)
 
 This template contains code and pipeline definitions for a machine learning project that demonstrates how to automate an end to end ML/AI workflow.
 
