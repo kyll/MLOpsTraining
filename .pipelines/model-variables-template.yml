@@ -16,20 +16,19 @@ variables:
     # The path to the model scoring script relative to SOURCES_DIR_TRAIN
   - name: SCORE_SCRIPT
     value: scoring/score.py
-    
 
   # Azure ML Variables
   - name: EXPERIMENT_NAME
     value: mlopspython
   - name: DATASET_NAME
-    value: model_ds
+    value: diabetes
   # Uncomment DATASTORE_NAME if you have configured non default datastore to point to your data
   # - name: DATASTORE_NAME
   #   value: datablobstore
   - name: DATASET_VERSION
     value: latest
   - name: TRAINING_PIPELINE_NAME
-    value: "model-Training-Pipeline"
+    value: 'model-Training-Pipeline'
   - name: MODEL_NAME
     value: model_model.pkl
 
@@ -37,7 +36,7 @@ variables:
   - name: AML_ENV_NAME
     value: model_training_env
   - name: AML_ENV_TRAIN_CONDA_DEP_FILE
-    value: "conda_dependencies.yml"
+    value: 'conda_dependencies.yml'
   - name: AML_COMPUTE_CLUSTER_CPU_SKU
     value: STANDARD_DS2_V2
   - name: AML_COMPUTE_CLUSTER_NAME
@@ -51,11 +50,11 @@ variables:
 
   # The name for the (docker/webapp) scoring image
   - name: IMAGE_NAME
-    value: "modeltrained"
+    value: 'modeltrained'
 
     # Optional. Used by a training pipeline with R on Databricks
   - name: DB_CLUSTER_ID
-    value: ""
+    value: ''
 
   # These are the default values set in ml_service\util\env_variables.py. Uncomment and override if desired.
   # Set to false to disable the evaluation step in the ML pipeline and register the newly trained model unconditionally.
@@ -74,10 +73,10 @@ variables:
     value: False
   # Conda dependencies for the batch scoring step
   - name: AML_ENV_SCORE_CONDA_DEP_FILE
-    value: "conda_dependencies_scoring.yml"
+    value: 'conda_dependencies_scoring.yml'
   # Conda dependencies for the score copying step
   - name: AML_ENV_SCORECOPY_CONDA_DEP_FILE
-    value: "conda_dependencies_scorecopy.yml"
+    value: 'conda_dependencies_scorecopy.yml'
     # AML Compute Cluster Config for parallel batch scoring
   - name: AML_ENV_NAME_SCORING
     value: model_scoring_env
@@ -98,32 +97,31 @@ variables:
     value: scoring/parallel_batchscore.py
   - name: BATCHSCORE_COPY_SCRIPT_PATH
     value: scoring/parallel_batchscore_copyoutput.py
-  # Flag to allow rebuilding the AML Environment after it was built for the first time. 
+  # Flag to allow rebuilding the AML Environment after it was built for the first time.
   # This enables dependency updates from the conda dependencies yaml for scoring activities.
   - name: AML_REBUILD_ENVIRONMENT_SCORING
-    value: "true"
+    value: 'true'
 
   # Datastore config for scoring
-  # The storage account name and key are supplied as variables in a variable group 
-  # in the Azure Pipelines library for this project. Please refer to repo docs for 
+  # The storage account name and key are supplied as variables in a variable group
+  # in the Azure Pipelines library for this project. Please refer to repo docs for
   # more details
 
   # Blob container where the input data for scoring can be found
   - name: SCORING_DATASTORE_INPUT_CONTAINER
-    value: "input"
-  # Blobname for the input data - include any applicable path in the string 
+    value: 'input'
+  # Blobname for the input data - include any applicable path in the string
   - name: SCORING_DATASTORE_INPUT_FILENAME
-    value: "model_scoring_input.csv"
+    value: 'model_scoring_input.csv'
   # Blob container where the output data for scoring can be found
   - name: SCORING_DATASTORE_OUTPUT_CONTAINER
-    value: "output"
-  # Blobname for the output data - include any applicable path in the string 
+    value: 'output'
+  # Blobname for the output data - include any applicable path in the string
   - name: SCORING_DATASTORE_OUTPUT_FILENAME
-    value: "model_scoring_output.csv"
+    value: 'model_scoring_output.csv'
   # Dataset name for input data for scoring
   - name: SCORING_DATASET_NAME
-    value: "model_scoring_ds"
+    value: 'model_scoring_ds'
   # Scoring pipeline name
   - name: SCORING_PIPELINE_NAME
-    value: "model-scoring-pipeline"
-    
+    value: 'model-scoring-pipeline'
